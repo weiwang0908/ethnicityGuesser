@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/*
+ * Leaflet 地图移动端响应式修复（Task 14.2 / 14.3）
+ *
+ * 1. 缩放按钮（.leaflet-bar a）默认 30×30px，低于 44px 触摸目标要求。
+ *    在触控设备（pointer: coarse）上放大到 44×44px，桌面端保持原样。
+ * 2. attribution 控件在小屏可能溢出，强制保持单行省略 + 不产生横向滚动。
+ * 3. 地图容器内部禁止产生横向滚动条。
+ */
+@media (pointer: coarse) {
+  .leaflet-bar a {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 18px;
+  }
+}
+
+.leaflet-control-attribution {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leaflet-container {
+  overflow: hidden;
+}
