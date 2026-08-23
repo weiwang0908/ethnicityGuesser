@@ -44,7 +44,7 @@ export default function ResultsScreen({
   const [copied, setCopied] = useState(false);
 
   const modeLabel = MODE_LABELS[mode];
-  const shareUrl = `https://ethnicity-guesser.com/play/${mode}`;
+  const shareUrl = `https://www.ethnicity-guesser.com/play/${mode}`;
   const tweetText = `I scored ${totalScore}/${maxScore} on Ethnicity Guesser ${modeLabel}! Can you beat my score? 🌍🧬`;
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     tweetText

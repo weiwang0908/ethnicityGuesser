@@ -13,7 +13,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Ethnicity Guesser",
-  url: "https://ethnicity-guesser.com",
+  url: "https://www.ethnicity-guesser.com",
   description:
     "Educational anthropology face-guessing game and phenotype encyclopedia.",
 };

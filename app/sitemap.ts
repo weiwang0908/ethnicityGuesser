@@ -9,11 +9,12 @@ import countries from "@/data/countries.json";
  * - phenotype 详情：209 个
  * - country 详情：48 个
  *
- * SITE_URL 未配置时回退到正式域名，保证 build 不报错。
+ * SITE_URL 未配置时回退到正式域名（www 主域，与 Vercel 重定向方向一致）。
+ * sitemap 内 URL 必须与 sitemap 文件同域，否则 Google 判定跨域拒绝抓取。
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = (
-    process.env.SITE_URL || "https://ethnicity-guesser.com"
+    process.env.SITE_URL || "https://www.ethnicity-guesser.com"
   ).replace(/\/$/, "");
   const now = new Date();
 

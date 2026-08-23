@@ -41,7 +41,7 @@ export default async function OgImage({
   const subtitle = region
     ? `Face Features & Origin · ${region}`
     : "Face Features & Origin";
-  const footerUrl = `ethnicity-guesser.com/phenotype/${params.slug}`;
+  const footerUrl = `www.ethnicity-guesser.com/phenotype/${params.slug}`;
 
   return new ImageResponse(
     (

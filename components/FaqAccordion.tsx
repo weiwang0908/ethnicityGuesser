@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useId } from "react";
+import { useRef, useState } from "react";
 
 type FaqItem = { question: string; answer: string };
 

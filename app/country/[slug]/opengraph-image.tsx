@@ -40,7 +40,7 @@ export default async function OgImage({
   const subtitle = region
     ? `Phenotype & People · ${region}`
     : "Phenotype & People";
-  const footerUrl = `ethnicity-guesser.com/country/${params.slug}`;
+  const footerUrl = `www.ethnicity-guesser.com/country/${params.slug}`;
 
   return new ImageResponse(
     (

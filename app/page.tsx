@@ -120,7 +120,7 @@ const webApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Ethnicity Guesser",
-  url: "https://ethnicity-guesser.com",
+  url: "https://www.ethnicity-guesser.com",
   applicationCategory: "GameApplication",
   operatingSystem: "Web",
   offers: {

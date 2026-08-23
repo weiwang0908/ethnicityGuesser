@@ -12,10 +12,12 @@ export const SITE_NAME = "Ethnicity Guesser";
 
 /**
  * 规范站点 URL（去尾斜杠）。优先取 process.env.SITE_URL，
- * 未配置时回退到本地开发地址，确保 build 不报错。
+ * 未配置时回退到正式域名（www 为主域，裸域名在 Vercel 308 → www）。
+ * 注意：回退值必须是线上正式域名 —— canonical / og:url 全靠它生成，
+ * 误回退 localhost 会导致全站 canonical 指向不可访问地址。
  */
 export const SITE_URL = (
-  process.env.SITE_URL || "http://localhost:3000"
+  process.env.SITE_URL || "https://www.ethnicity-guesser.com"
 ).replace(/\/$/, "");
 
 /**

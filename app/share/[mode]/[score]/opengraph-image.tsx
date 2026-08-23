@@ -53,7 +53,7 @@ export default function ShareImage({
           <div style={{ display: "flex", fontSize: 36 }}>{modeLabel} Mode</div>
         </div>
         <div style={{ display: "flex", fontSize: 28 }}>
-          Can you beat my score? Play at ethnicity-guesser.com
+          Can you beat my score? Play at www.ethnicity-guesser.com
         </div>
       </div>
     ),

@@ -48,7 +48,7 @@ export default function OgImage() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 28, color: "#94a3b8" }}>
-          ethnicity-guesser.com
+          www.ethnicity-guesser.com
         </div>
       </div>
     ),

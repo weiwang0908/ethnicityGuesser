@@ -6,7 +6,7 @@ import { MetadataRoute } from "next";
  */
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = (
-    process.env.SITE_URL || "https://ethnicity-guesser.com"
+    process.env.SITE_URL || "https://www.ethnicity-guesser.com"
   ).replace(/\/$/, "");
   return {
     rules: {
