@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/seo";
 
 interface BreadcrumbItem {
   name: string;
@@ -15,6 +16,7 @@ interface BreadcrumbsProps {
  * - 可视部分用 ">" 分隔，最后一项不可点（当前页）。
  * - JSON-LD `<script type="application/ld+json">` 始终注入（移动端隐藏可视部分时仍保留）。
  * - 移动端（< sm）隐藏可视面包屑省空间，但 JSON-LD 保留供搜索引擎读取。
+ * - JSON-LD 的 item 必须是绝对 URL（GSC 要求），可视化 Link 仍用相对路径。
  */
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   if (!items || items.length === 0) return null;
@@ -26,7 +28,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: `${SITE_URL}${item.url}`,
     })),
   };
 
