@@ -24,12 +24,15 @@ export default function TermsPage() {
         ]}
       />
 
-      <article className="flex flex-col gap-6 max-w-3xl">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+      <article className="flex flex-col gap-6 max-w-3xl rounded-4xl bg-section-soft border border-stone-200/70 p-6 sm:p-8 shadow-premium">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          Terms
+        </span>
+        <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
           Terms of Service
         </h1>
 
-        <p className="m-0 text-base text-gray-700 leading-relaxed">
+        <p className="m-0 text-base text-stone-700 leading-relaxed">
           These Terms of Service govern your use of the Ethnicity Guesser
           website. By opening any page on the site, you agree to these terms.
           If you do not agree, please do not use the site. These terms are
@@ -40,15 +43,15 @@ export default function TermsPage() {
         </p>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Acceptance of Terms
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             By accessing Ethnicity Guesser, you confirm that you have read,
             understood, and agreed to these Terms of Service and to the{" "}
             <Link
               href="/privacy-policy"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Privacy Policy
             </Link>
@@ -61,10 +64,10 @@ export default function TermsPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Use of Service
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser is provided free of charge for educational and
             entertainment purposes only. You may play the quiz, read the
             phenotype encyclopedia and country face gallery, and share links
@@ -75,7 +78,7 @@ export default function TermsPage() {
             misrepresenting phenotype data as a basis for racial, ethnic, or
             national classification of real people.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The site is an educational anthropology resource, not a tool for
             determining individual racial or ethnic identity. You agree to
             treat every phenotype description as a historical and geographic
@@ -83,7 +86,7 @@ export default function TermsPage() {
             the{" "}
             <Link
               href="/disclaimer"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Disclaimer
             </Link>{" "}
@@ -92,10 +95,10 @@ export default function TermsPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Intellectual Property
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The site&apos;s written content, page layout, code, and original
             illustrations are owned by Ethnicity Guesser and are provided for
             personal, non-commercial, educational use. You may quote short
@@ -107,13 +110,13 @@ export default function TermsPage() {
             images must comply with the license terms set by the original
             source, which we link to wherever possible.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We respect intellectual property rights. If you believe any
             content on the site infringes your copyright, please contact us
             through the{" "}
             <Link
               href="/contact"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Contact
             </Link>{" "}
@@ -123,10 +126,10 @@ export default function TermsPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Disclaimer of Liability
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser is provided on an &quot;as is&quot; and
             &quot;as available&quot; basis without warranties of any kind,
             whether express or implied. To the maximum extent permitted by
@@ -137,7 +140,7 @@ export default function TermsPage() {
             browser, or any consequence of treating phenotype descriptions as
             a basis for real-world decisions about yourself or others.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The phenotype encyclopedia reflects historical distributions from
             roughly 1500 years ago and estimates appearance, not DNA ancestry
             or personal identity. It is not suitable for determining
@@ -148,10 +151,10 @@ export default function TermsPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Changes to Terms
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We may revise these Terms of Service at any time by updating this
             page. We will not notify users individually, because the site has
             no account system; instead, the effective date is the date you
@@ -162,12 +165,12 @@ export default function TermsPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Contact</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Contact</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Questions about these Terms of Service can be sent to{" "}
             <a
               href="mailto:hello@ethnicity-guesser.com"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               hello@ethnicity-guesser.com
             </a>

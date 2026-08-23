@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 import countriesRaw from "@/data/countries.json";
 import type { Phenotype } from "@/lib/dailyQuestions";
 import {
@@ -9,21 +8,9 @@ import {
   calculateScore,
   MAX_SCORE_PER_QUESTION,
 } from "@/lib/scoring";
-import QuestionCard from "@/components/game/QuestionCard";
+import GameBoard from "@/components/game/GameBoard";
 import AnswerReveal from "@/components/game/AnswerReveal";
 import ResultsScreen, { type GameAnswer } from "@/components/game/ResultsScreen";
-
-// 动态加载地图，ssr:false 避免 leaflet 在服务端访问 window
-const WorldMap = dynamic(() => import("@/components/game/WorldMap"), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="w-full rounded-lg bg-gray-100"
-      style={{ height: 360 }}
-      aria-label="Loading map"
-    />
-  ),
-});
 
 /** Countries 模式题数（48 国全部，固定顺序）。 */
 const COUNTRIES_QUESTION_COUNT = countriesRaw.length;
@@ -138,34 +125,14 @@ export default function CountriesGame() {
 
   // playing
   return (
-    <div className="flex flex-col gap-4">
-      <QuestionCard
-        phenotype={current}
-        questionNumber={currentIndex + 1}
-        totalQuestions={COUNTRIES_QUESTION_COUNT}
-      />
-      <div className="flex flex-col gap-2">
-        <p className="m-0 text-sm text-gray-600">
-          Click the map where you think this country is located.
-        </p>
-        <WorldMap
-          height={360}
-          onGuess={(lat, lng) => setGuess({ lat, lng })}
-          markers={
-            guess
-              ? [{ lat: guess.lat, lng: guess.lng, color: "blue" as const }]
-              : []
-          }
-        />
-        <button
-          type="button"
-          onClick={handleSubmitGuess}
-          disabled={!guess}
-          className="inline-flex items-center justify-center min-h-[44px] px-5 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed w-full sm:w-auto"
-        >
-          {guess ? "Submit Guess" : "Click the map to guess"}
-        </button>
-      </div>
-    </div>
+    <GameBoard
+      phenotype={current}
+      questionNumber={currentIndex + 1}
+      totalQuestions={COUNTRIES_QUESTION_COUNT}
+      hint="Click the map where you think this country is located."
+      guess={guess}
+      onGuess={(lat, lng) => setGuess({ lat, lng })}
+      onSubmit={handleSubmitGuess}
+    />
   );
 }

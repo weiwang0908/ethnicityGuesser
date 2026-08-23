@@ -24,12 +24,15 @@ export default function PrivacyPolicyPage() {
         ]}
       />
 
-      <article className="flex flex-col gap-6 max-w-3xl">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+      <article className="flex flex-col gap-6 max-w-3xl rounded-4xl bg-section-soft border border-stone-200/70 p-6 sm:p-8 shadow-premium">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          Privacy
+        </span>
+        <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
           Privacy Policy
         </h1>
 
-        <p className="m-0 text-base text-gray-700 leading-relaxed">
+        <p className="m-0 text-base text-stone-700 leading-relaxed">
           This Privacy Policy explains what information Ethnicity Guesser
           collects, how we use it, and the choices you have. We designed the
           site to collect as little as possible, to avoid cookies, and to keep
@@ -39,10 +42,10 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Information We Collect
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser is a static, no-login website. We do not ask for
             your name, email address, password, or any other account
             information, because there is no account. We do not run a backend
@@ -52,7 +55,7 @@ export default function PrivacyPolicyPage() {
             your browser data erases this information completely, with no
             backup on our side.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The only information we receive automatically is the minimal
             anonymized traffic data described in the Cookies &amp; Analytics
             section below. We do not buy, sell, or trade any personal data,
@@ -61,14 +64,14 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Cookies &amp; Analytics
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser uses{" "}
             <a
               href="https://plausible.io"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -83,7 +86,7 @@ export default function PrivacyPolicyPage() {
             referring website, and the page you loaded. There is no user ID,
             no fingerprint, and no cross-site tracking.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Because Plausible is cookie-free, this site does not set any
             tracking cookies and does not require a cookie banner under the
             EU ePrivacy Directive. If you still prefer to opt out of all
@@ -93,10 +96,10 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Third-Party Services
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Static site assets (composite face images and phenotype
             photographs) may be loaded from public CDN-hosted archives such as
             the Human Phenotypes reference site, Wikimedia Commons, and
@@ -108,7 +111,7 @@ export default function PrivacyPolicyPage() {
             advertising networks, social-media embeds, and comment widgets,
             because each of those would bring its own tracker.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We do not embed any third-party login, payment, or chat widget. If
             we ever add a feature that requires one, we will update this
             policy first and name the provider and the data it receives.
@@ -116,10 +119,10 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Data Retention
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Because we do not store personal data, there is essentially nothing
             to retain. Aggregate analytics counters in Plausible are retained
             by Plausible according to its own data-retention policy, which you
@@ -128,7 +131,7 @@ export default function PrivacyPolicyPage() {
             your browser data for this site, at which point it is permanently
             deleted.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We do not store uploaded photos. Although the planned AI face
             analysis tool has been deferred, we want to be explicit: any
             future photo feature will be designed so that uploaded images are
@@ -139,8 +142,8 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Your Rights</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Your Rights</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             If you are located in the European Economic Area, the United
             Kingdom, or another jurisdiction with GDPR-style data protection
             law, you have rights including access, rectification, erasure,
@@ -151,13 +154,13 @@ export default function PrivacyPolicyPage() {
             progress. For any request that does apply, contact us through the{" "}
             <Link
               href="/contact"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Contact
             </Link>{" "}
             page.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             If you are a California resident, the California Consumer Privacy
             Act (CCPA) gives you the right to know what personal information is
             collected, to request deletion, and to opt out of the sale or
@@ -172,12 +175,12 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Contact</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Contact</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Questions about this Privacy Policy can be sent to{" "}
             <a
               href="mailto:hello@ethnicity-guesser.com"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               hello@ethnicity-guesser.com
             </a>

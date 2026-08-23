@@ -10,7 +10,7 @@ const gameLinks = [
 const resourceLinks = [
   { name: "Phenotypes", href: "/phenotypes" },
   { name: "Countries", href: "/country" },
-  { name: "FAQ", href: "/faq" },
+  { name: "FAQ", href: "/#faq" },
 ];
 
 const trustLinks = [
@@ -29,34 +29,34 @@ const trustLinks = [
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-auto w-full border-t border-gray-200 bg-gray-50 text-gray-700">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+    <footer className="mt-auto w-full border-t border-stone-200 bg-section-soft text-stone-700">
+      <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* 第一列：品牌 + 简介 + 全站 disclaimer */}
           <div>
-            <div className="font-semibold text-gray-900 text-lg">
+            <div className="font-semibold text-stone-900 text-lg tracking-tight">
               {SITE_NAME}
             </div>
-            <p className="mt-2 text-sm leading-6 m-0">
+            <p className="mt-2 text-sm leading-6 m-0 text-stone-600">
               A free daily ethnicity quiz game. Guess ethnicity by face on the
               world map and browse human phenotypes with face features and
               origins.
             </p>
-            <p className="mt-3 text-xs leading-5 text-gray-600 m-0 italic">
+            <p className="mt-3 text-xs leading-5 text-stone-500 m-0 italic">
               {SITE_DISCLAIMER}
             </p>
           </div>
 
           {/* 第二列：Games */}
           <nav aria-label="Footer Games" className="flex flex-col gap-2">
-            <div className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
+            <div className="font-semibold text-stone-900 text-xs uppercase tracking-widest">
               Games
             </div>
             {gameLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm hover:underline min-h-[44px] flex items-center"
+                className="text-sm text-stone-600 hover:text-amber-800 hover:underline underline-offset-4 min-h-[44px] flex items-center transition-colors"
               >
                 {l.name}
               </Link>
@@ -65,14 +65,14 @@ export default function Footer() {
 
           {/* 第三列：Resources */}
           <nav aria-label="Footer Resources" className="flex flex-col gap-2">
-            <div className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
+            <div className="font-semibold text-stone-900 text-xs uppercase tracking-widest">
               Resources
             </div>
             {resourceLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm hover:underline min-h-[44px] flex items-center"
+                className="text-sm text-stone-600 hover:text-amber-800 hover:underline underline-offset-4 min-h-[44px] flex items-center transition-colors"
               >
                 {l.name}
               </Link>
@@ -83,24 +83,24 @@ export default function Footer() {
         {/* 底部信任页链接 */}
         <nav
           aria-label="Trust pages"
-          className="mt-8 pt-4 border-t border-gray-200 flex flex-wrap gap-x-4 gap-y-2"
+          className="mt-8 pt-4 border-t border-stone-200/70 flex flex-wrap gap-x-4 gap-y-2"
         >
           {trustLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs hover:underline min-h-[44px] flex items-center"
+              className="text-xs text-stone-500 hover:text-stone-800 hover:underline underline-offset-4 min-h-[44px] flex items-center transition-colors"
             >
               {l.name}
             </Link>
           ))}
         </nav>
 
-        <div className="mt-6 text-xs text-gray-500">
+        <div className="mt-6 text-xs text-stone-500">
           © {year} {SITE_NAME}.{" "}
           <a
             href={SITE_URL}
-            className="hover:underline"
+            className="hover:text-stone-800 hover:underline underline-offset-4 transition-colors"
           >
             {SITE_URL.replace(/^https?:\/\//, "")}
           </a>

@@ -21,6 +21,8 @@ interface WorldMapProps {
   markers?: MapMarker[];
   /** 地图高度（px）。移动端建议 ≥300。 */
   height?: number;
+  /** 响应式高度类（如 "h-[360px] lg:h-[480px]"）。提供时优先于 height。 */
+  heightClass?: string;
 }
 
 /**
@@ -59,6 +61,7 @@ export default function WorldMap({
   onGuess,
   markers = [],
   height = 360,
+  heightClass,
 }: WorldMapProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -66,21 +69,26 @@ export default function WorldMap({
   if (!mounted) {
     return (
       <div
-        className="w-full rounded-lg bg-gray-100"
-        style={{ height }}
+        className={`w-full rounded-3xl bg-stone-100 ${heightClass ?? ""}`}
+        style={heightClass ? undefined : { height }}
         aria-label="Loading map"
       />
     );
   }
 
   return (
-    <div className="w-full rounded-lg overflow-hidden border border-gray-200">
+    <div
+      className={`w-full rounded-3xl overflow-hidden border border-stone-200 shadow-premium ${
+        heightClass ?? ""
+      }`}
+      style={heightClass ? undefined : { height }}
+    >
       <MapContainer
         center={[20, 0]}
         zoom={2}
         minZoom={2}
         worldCopyJump
-        style={{ height, width: "100%" }}
+        style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={false}
       >
         <TileLayer

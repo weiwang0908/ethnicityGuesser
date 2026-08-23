@@ -72,15 +72,15 @@ export default function CountryDetailPage({
     return (
       <div className="flex flex-col gap-6">
         <Disclaimer />
-        <h1 className="m-0 text-3xl font-bold text-gray-900">
+        <h1 className="m-0 text-3xl font-bold text-stone-900">
           Country Not Found
         </h1>
-        <p className="m-0 text-base text-gray-700">
+        <p className="m-0 text-base text-stone-700">
           The requested country average face page could not be found.
         </p>
         <Link
           href="/country"
-          className="text-gray-900 underline underline-offset-4 min-h-[44px] inline-flex items-center"
+          className="text-stone-900 underline underline-offset-4 min-h-[44px] inline-flex items-center"
         >
           ← Back to countries list
         </Link>
@@ -121,12 +121,17 @@ export default function CountryDetailPage({
         ]}
       />
 
-      <article className="flex flex-col gap-8 max-w-3xl">
+      <article className="flex flex-col gap-8 max-w-3xl rounded-4xl bg-white border border-stone-200 shadow-premium p-6 sm:p-8">
         <header className="flex flex-col gap-3">
-          <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-            {country.name} Average Face - Phenotype & People
-          </h1>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <div className="flex flex-col gap-2">
+            <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+              Country
+            </span>
+            <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
+              {country.name} Average Face - Phenotype & People
+            </h1>
+          </div>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The {country.name.toLowerCase()} average face is a composite image
             synthesizing the most frequently recurring facial features among
             people from {country.name}. This page presents the {country.name}{" "}
@@ -138,10 +143,10 @@ export default function CountryDetailPage({
 
         {/* Average Face Composite */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Average Face Composite
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The {country.name.toLowerCase()} average face composite below is a
             statistical synthesis: many individual photographs of people from{" "}
             {country.name} are aligned and averaged to produce a single image
@@ -157,14 +162,14 @@ export default function CountryDetailPage({
               width={300}
               height={300}
               sizes="(max-width: 640px) 100vw, 300px"
-              className="rounded-lg border border-gray-200 object-cover bg-gray-100 w-full max-w-[300px] h-auto"
+              className="rounded-3xl overflow-hidden shadow-premium object-cover bg-stone-100 w-full max-w-[300px] h-auto"
               loading="lazy"
             />
           ) : (
             <div
               role="img"
               aria-label={`${country.name} average face composite`}
-              className="rounded-lg border border-gray-200 bg-gray-100 w-full max-w-[300px] h-[300px] flex items-center justify-center text-center px-4 text-sm text-gray-500"
+              className="rounded-3xl overflow-hidden shadow-premium bg-stone-100 w-full max-w-[300px] h-[300px] flex items-center justify-center text-center px-4 text-sm text-stone-500"
             >
               {country.name} average face composite
             </div>
@@ -173,10 +178,10 @@ export default function CountryDetailPage({
 
         {/* People of {Country} */}
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             People of {country.name}
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             To understand the {country.name.toLowerCase()} average face, it
             helps to understand the people behind it. {country.name} is located
             in {country.region}, and the sections below describe the
@@ -184,36 +189,36 @@ export default function CountryDetailPage({
             the recurring facial features captured in the composite.
           </p>
 
-          <h3 className="m-0 text-xl font-bold text-gray-900">Demographics</h3>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h3 className="m-0 text-xl font-bold text-stone-900">Demographics</h3>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             {content.demographics}
           </p>
 
-          <h3 className="m-0 text-xl font-bold text-gray-900">Geography</h3>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h3 className="m-0 text-xl font-bold text-stone-900">Geography</h3>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             {content.geography}
           </p>
 
-          <h3 className="m-0 text-xl font-bold text-gray-900">
+          <h3 className="m-0 text-xl font-bold text-stone-900">
             Historical Background
           </h3>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             {content.history}
           </p>
 
-          <h3 className="m-0 text-xl font-bold text-gray-900">Culture</h3>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h3 className="m-0 text-xl font-bold text-stone-900">Culture</h3>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             {content.culture}
           </p>
 
           {country.source_url && (
-            <p className="m-0 text-sm text-gray-600">
+            <p className="m-0 text-sm text-stone-600">
               Source:{" "}
               <a
                 href={country.source_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-900 underline underline-offset-4 hover:text-gray-700"
+                className="text-stone-900 underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800 transition-colors"
               >
                 {country.name} average face source
               </a>
@@ -223,10 +228,10 @@ export default function CountryDetailPage({
 
         {/* Play the Country Quiz */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Play the Country Quiz
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Put your eye for faces to the test. In the Countries game mode you
             are shown an average face composite like the {country.name.toLowerCase()}{" "}
             one above and asked to guess which country it represents. Try a few
@@ -235,7 +240,7 @@ export default function CountryDetailPage({
           </p>
           <a
             href="/play/countries"
-            className="self-start inline-flex items-center min-h-[44px] px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded hover:bg-gray-700"
+            className="self-start inline-flex items-center min-h-[44px] px-4 py-2 text-sm font-medium text-white bg-stone-900 rounded-full shadow-premium hover:bg-stone-800 hover:shadow-premium-hover active:scale-[0.98] transition-all duration-300 ease-premium"
           >
             Play Guess the Nationality Game
           </a>
@@ -243,10 +248,10 @@ export default function CountryDetailPage({
 
         {/* Related Countries */}
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Related Countries
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Other countries in {country.region} and neighboring regions whose
             average face composites share features with the {country.name.toLowerCase()}{" "}
             composite. Comparing them side by side makes the regional patterns
@@ -257,8 +262,8 @@ export default function CountryDetailPage({
               const rHasImage = r.image_url && r.image_url.trim().length > 0;
               return (
                 <li key={r.slug} className="m-0 p-0">
-                  <div className="flex flex-col gap-1 border border-gray-200 rounded-lg p-3 hover:border-gray-400 transition-colors h-full">
-                    <h3 className="m-0 text-base font-semibold text-gray-900 leading-tight">
+                  <div className="group flex flex-col gap-1 p-3 h-full rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium">
+                    <h3 className="m-0 text-base font-semibold text-stone-900 leading-tight group-hover:text-amber-800 transition-colors">
                       <Link
                         href={`/country/${r.slug}`}
                         className="hover:underline underline-offset-4 min-h-[44px] flex items-center"
@@ -266,7 +271,7 @@ export default function CountryDetailPage({
                         {r.name}
                       </Link>
                     </h3>
-                    <p className="m-0 text-xs text-gray-600">{r.region}</p>
+                    <p className="m-0 text-xs text-stone-600">{r.region}</p>
                     {rHasImage ? (
                       <Image
                         src={r.image_url}
@@ -274,14 +279,14 @@ export default function CountryDetailPage({
                         width={80}
                         height={80}
                         sizes="80px"
-                        className="rounded-md object-cover flex-shrink-0 bg-gray-100"
+                        className="rounded-md object-cover flex-shrink-0 bg-stone-100 group-hover:scale-[1.06] transition-transform duration-500 ease-premium"
                         loading="lazy"
                       />
                     ) : (
                       <div
                         role="img"
                         aria-label={`${r.name} average face composite`}
-                        className="rounded-md border border-gray-200 bg-gray-100 w-20 h-20 flex items-center justify-center text-center px-1 text-[10px] text-gray-500"
+                        className="rounded-md border border-stone-200 bg-stone-100 w-20 h-20 flex items-center justify-center text-center px-1 text-[10px] text-stone-500"
                       >
                         {r.name} average face
                       </div>
@@ -295,11 +300,11 @@ export default function CountryDetailPage({
 
         <nav
           aria-label="Back to countries list"
-          className="border-t border-gray-200 pt-4"
+          className="border-t border-stone-200 pt-4"
         >
           <Link
             href="/country"
-            className="text-gray-900 underline underline-offset-4 min-h-[44px] inline-flex items-center text-sm"
+            className="text-stone-900 underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800 transition-colors min-h-[44px] inline-flex items-center text-sm"
           >
             ← Back to countries list
           </Link>

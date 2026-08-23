@@ -68,10 +68,15 @@ export default function PhenotypesIndexPage() {
       />
 
       <article className="flex flex-col gap-6">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-          Human Phenotypes - Complete List
-        </h1>
-        <p className="m-0 text-base text-gray-700 leading-relaxed">
+        <div className="flex flex-col gap-2">
+          <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+            Catalog
+          </span>
+          <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
+            Human Phenotypes - Complete List
+          </h1>
+        </div>
+        <p className="m-0 text-base text-stone-700 leading-relaxed">
           A complete list of {data.length} human phenotypes with average face
           composites, geographic distribution, and physical characteristics.
           Each phenotype entry is grouped by its native region, from Northern
@@ -87,7 +92,7 @@ export default function PhenotypesIndexPage() {
             <a
               key={region}
               href={`#region-${region.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-              className="text-sm text-gray-700 hover:underline underline-offset-4 min-h-[44px] flex items-center px-2 py-1 rounded hover:bg-gray-100"
+              className="text-sm text-stone-700 hover:underline underline-offset-4 min-h-[44px] flex items-center px-2 py-1 rounded hover:bg-stone-100"
             >
               {region} ({items.length})
             </a>
@@ -98,17 +103,17 @@ export default function PhenotypesIndexPage() {
           const anchor = `region-${region.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
           return (
             <section key={region} id={anchor} className="flex flex-col gap-4 scroll-mt-20">
-              <h2 className="m-0 text-2xl font-bold text-gray-900">
+              <h2 className="m-0 text-2xl font-bold text-stone-900">
                 {region}
               </h2>
-              <p className="m-0 text-sm text-gray-600">
+              <p className="m-0 text-sm text-stone-600">
                 {items.length} phenotype{items.length > 1 ? "s" : ""} native to{" "}
                 {region}.
               </p>
               <ul className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {items.map((p) => (
                   <li key={p.slug} className="m-0 p-0">
-                    <div className="flex flex-col gap-2 border border-gray-200 rounded-lg p-3 hover:border-gray-400 transition-colors h-full">
+                    <div className="group flex flex-col gap-2 p-3 h-full rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover transition-all duration-300 ease-premium">
                       <div className="flex items-start gap-3">
                         <Image
                           src={p.image_url}
@@ -116,11 +121,11 @@ export default function PhenotypesIndexPage() {
                           width={80}
                           height={80}
                           sizes="80px"
-                          className="rounded-md object-cover flex-shrink-0 bg-gray-100"
+                          className="rounded-md object-cover flex-shrink-0 bg-stone-100 group-hover:scale-[1.06] transition-transform duration-500 ease-premium"
                           loading="lazy"
                         />
                         <div className="flex flex-col gap-1 min-w-0">
-                          <h3 className="m-0 text-base font-semibold text-gray-900 leading-tight">
+                          <h3 className="m-0 text-base font-semibold text-stone-900 leading-tight group-hover:text-amber-800 transition-colors">
                             <Link
                               href={`/phenotype/${p.slug}`}
                               className="hover:underline underline-offset-4 min-h-[44px] flex items-center"
@@ -128,7 +133,7 @@ export default function PhenotypesIndexPage() {
                               {p.name}
                             </Link>
                           </h3>
-                          <p className="m-0 text-xs text-gray-600 line-clamp-3">
+                          <p className="m-0 text-xs text-stone-600 line-clamp-3">
                             {p.description.split("Physical Traits:")[0].trim()}
                           </p>
                         </div>
@@ -142,16 +147,16 @@ export default function PhenotypesIndexPage() {
         })}
       </article>
 
-      <section className="flex flex-col gap-3 border-t border-gray-200 pt-6">
-        <h2 className="m-0 text-xl font-bold text-gray-900">Continue Exploring</h2>
-        <p className="m-0 text-sm text-gray-700">
+      <section className="flex flex-col gap-3 border-t border-stone-200 pt-6">
+        <h2 className="m-0 text-xl font-bold text-stone-900">Continue Exploring</h2>
+        <p className="m-0 text-sm text-stone-700">
           Read a specific phenotype in detail or play the ethnicity quiz game.
         </p>
         <ul className="m-0 p-0 list-none flex flex-wrap gap-2">
           <li className="m-0 p-0">
             <Link
               href="/"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               ← Back to Home
             </Link>
@@ -159,7 +164,7 @@ export default function PhenotypesIndexPage() {
           <li className="m-0 p-0">
             <Link
               href="/play/classic-daily"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               Play Classic Daily Game
             </Link>
@@ -167,7 +172,7 @@ export default function PhenotypesIndexPage() {
           <li className="m-0 p-0">
             <Link
               href="/play/challenge"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               Play Challenge Mode
             </Link>
@@ -175,7 +180,7 @@ export default function PhenotypesIndexPage() {
           <li className="m-0 p-0">
             <Link
               href="/play/countries"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               Play Countries Mode
             </Link>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import {
   getChallengeQuestions,
@@ -13,21 +12,9 @@ import {
   calculateScore,
   MAX_SCORE_PER_QUESTION,
 } from "@/lib/scoring";
-import QuestionCard from "@/components/game/QuestionCard";
+import GameBoard from "@/components/game/GameBoard";
 import AnswerReveal from "@/components/game/AnswerReveal";
 import ResultsScreen, { type GameAnswer } from "@/components/game/ResultsScreen";
-
-// 动态加载地图，ssr:false 避免 leaflet 在服务端访问 window
-const WorldMap = dynamic(() => import("@/components/game/WorldMap"), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="w-full rounded-lg bg-gray-100"
-      style={{ height: 360 }}
-      aria-label="Loading map"
-    />
-  ),
-});
 
 const MAX_TOTAL_SCORE = MAX_SCORE_PER_QUESTION * CHALLENGE_QUESTION_COUNT;
 const STORAGE_KEY = "challenge-progress";
@@ -231,10 +218,10 @@ export default function ChallengeGame() {
   if (questions.length === 0 || !hydrated) {
     return (
       <div className="flex flex-col gap-4 animate-pulse">
-        <div className="h-4 w-1/3 bg-gray-200 rounded" />
-        <div className="h-2 w-full bg-gray-200 rounded" />
-        <div className="mx-auto w-full max-w-sm aspect-square bg-gray-200 rounded-lg" />
-        <div className="w-full bg-gray-200 rounded-lg" style={{ height: 360 }} />
+        <div className="h-4 w-1/3 bg-stone-200 rounded" />
+        <div className="h-2 w-full bg-stone-200 rounded" />
+        <div className="mx-auto w-full max-w-[240px] lg:max-w-[300px] aspect-square bg-stone-200 rounded-3xl" />
+        <div className="w-full bg-stone-200 rounded-3xl" style={{ height: 360 }} />
       </div>
     );
   }
@@ -271,33 +258,15 @@ export default function ChallengeGame() {
   // playing
   return (
     <div className="flex flex-col gap-4">
-      <QuestionCard
+      <GameBoard
         phenotype={current}
         questionNumber={currentIndex + 1}
         totalQuestions={CHALLENGE_QUESTION_COUNT}
+        hint="Click the map where you think this phenotype is from."
+        guess={guess}
+        onGuess={(lat, lng) => setGuess({ lat, lng })}
+        onSubmit={handleSubmitGuess}
       />
-      <div className="flex flex-col gap-2">
-        <p className="m-0 text-sm text-gray-600">
-          Click the map where you think this phenotype is from.
-        </p>
-        <WorldMap
-          height={360}
-          onGuess={(lat, lng) => setGuess({ lat, lng })}
-          markers={
-            guess
-              ? [{ lat: guess.lat, lng: guess.lng, color: "blue" as const }]
-              : []
-          }
-        />
-        <button
-          type="button"
-          onClick={handleSubmitGuess}
-          disabled={!guess}
-          className="inline-flex items-center justify-center min-h-[44px] px-5 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed w-full sm:w-auto"
-        >
-          {guess ? "Submit Guess" : "Click the map to guess"}
-        </button>
-      </div>
       <QuitButton onQuit={handleQuit} />
     </div>
   );
@@ -309,7 +278,7 @@ function QuitButton({ onQuit }: { onQuit: () => void }) {
     <button
       type="button"
       onClick={onQuit}
-      className="inline-flex items-center justify-center min-h-[44px] px-4 py-2 rounded-lg border border-gray-300 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors w-full sm:w-auto"
+      className="inline-flex items-center justify-center min-h-[44px] px-4 py-2 rounded-lg border border-stone-300 text-stone-600 text-sm font-medium hover:bg-stone-100 transition-colors w-full sm:w-auto"
     >
       Quit Challenge
     </button>

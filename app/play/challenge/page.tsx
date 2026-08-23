@@ -37,18 +37,29 @@ export default function ChallengePage() {
           { name: "Challenge", url: "/play/challenge" },
         ]}
       />
-      <header className="flex flex-col gap-2">
-        <h1 className="m-0 text-2xl sm:text-3xl font-bold text-gray-900">
+      <header className="flex flex-col gap-3 rounded-3xl bg-white border border-stone-200 shadow-premium p-6 sm:p-7">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          Game mode
+        </span>
+        <h1 className="m-0 text-2xl sm:text-3xl font-bold text-stone-900">
           Ethnicity Challenge Quiz - 38 Phenotypes
         </h1>
-        <p className="m-0 text-sm sm:text-base text-gray-700 leading-relaxed max-w-3xl">
+        <p className="m-0 text-sm sm:text-base text-stone-700 leading-relaxed max-w-3xl">
           The Ethnicity Challenge Quiz tests you on 38 human phenotypes from
           every inhabited region. There is no time limit, and your progress is
           saved automatically, so you can pause and resume anytime. Drop your
           pin on the world map and see how close each guess lands.
         </p>
+        <a
+          href="#game"
+          className="inline-flex items-center justify-center min-h-[48px] px-8 py-3 rounded-full bg-stone-900 text-white font-medium shadow-premium hover:bg-stone-800 hover:shadow-premium-hover active:scale-[0.98] transition-all duration-300 ease-premium w-full sm:w-auto"
+        >
+          Start
+        </a>
       </header>
-      <ChallengeGame />
+      <div id="game" className="scroll-mt-24">
+        <ChallengeGame />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(gameJsonLd) }}

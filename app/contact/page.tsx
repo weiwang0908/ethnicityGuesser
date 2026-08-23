@@ -25,24 +25,27 @@ export default function ContactPage() {
       />
 
       <article className="flex flex-col gap-6 max-w-3xl">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          Contact
+        </span>
+        <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
           Contact Ethnicity Guesser
         </h1>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Get in Touch</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Get in Touch</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We read every message. Whether you have a question about the game,
             a correction to a phenotype entry, a translation offer, or just
             want to say hello, the simplest way to reach the Ethnicity Guesser
             team is by email. We are a small volunteer project, so replies may
             take a few days, but every message is read by a human.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Email us at{" "}
             <a
               href="mailto:hello@ethnicity-guesser.com"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               hello@ethnicity-guesser.com
             </a>
@@ -52,8 +55,8 @@ export default function ContactPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Support</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Support</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             For technical support, tell us which device, browser, and game mode
             you were using when the issue happened, and roughly what time it
             occurred. Ethnicity Guesser is a static site with no login, so we
@@ -62,20 +65,20 @@ export default function ContactPage() {
             questions about how the daily quiz works, what the score means,
             and whether your data is stored are answered on the{" "}
             <Link
-              href="/faq"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              href="/#faq"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               FAQ
             </Link>{" "}
-            page, so it is worth checking there first.
+            section on the homepage, so it is worth checking there first.
           </p>
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Report an Issue
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Phenotype boundaries blur at every edge, historical distributions
             shift with migration, and our writing is not perfect. If you spot
             an inaccuracy in a phenotype description, a misplaced region
@@ -87,17 +90,17 @@ export default function ContactPage() {
             the{" "}
             <Link
               href="/editorial-policy"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Editorial Policy
             </Link>{" "}
             page.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             For privacy or data protection requests, see the{" "}
             <Link
               href="/privacy-policy"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Privacy Policy
             </Link>{" "}

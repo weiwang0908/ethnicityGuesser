@@ -33,13 +33,16 @@ export default function AboutPage() {
       />
 
       <article className="flex flex-col gap-6 max-w-3xl">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          About
+        </span>
+        <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
           About Ethnicity Guesser
         </h1>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Mission</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Mission</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser exists to turn casual curiosity about human
             diversity into structured, respectful learning. The internet is
             full of face-guessing games that lean on stereotype and shock
@@ -52,7 +55,7 @@ export default function AboutPage() {
             the distance error, and a short readable description so each play
             teaches something concrete.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We also believe free, no-signup educational tools should not be a
             luxury. Ethnicity Guesser is free to play in every mode, on every
             device, with no account, no paywall, and no premium tier. The
@@ -63,8 +66,8 @@ export default function AboutPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">What We Do</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">What We Do</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser is part geography game, part anthropology primer.
             In the core quiz, a composite face appears on screen, you click
             where you think that phenotype most commonly appears on the world
@@ -74,7 +77,7 @@ export default function AboutPage() {
             the full phenotype catalogue, and a country-focused variant built
             around average faces of forty-eight nations.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Beyond the game, we maintain a phenotype encyclopedia of 240
             entries sourced from public anthropology references, plus a country
             average face gallery with a short population-history article for
@@ -86,14 +89,14 @@ export default function AboutPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Data Sources</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Data Sources</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Our phenotype data is compiled from publicly available
             anthropology references and rewritten in plain English. The
             primary source for the phenotype catalogue is{" "}
             <a
               href="https://humanphenotypes.net"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -108,7 +111,7 @@ export default function AboutPage() {
             references such as the national ethnic compendia published by
             China&apos;s State Ethnic Affairs Commission.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             None of these sources are perfect or complete. Phenotype
             boundaries blur at every edge, historical distributions shift with
             migration, and any single composite face is a statistical
@@ -118,7 +121,7 @@ export default function AboutPage() {
             methodology is described on the{" "}
             <Link
               href="/editorial-policy"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Editorial Policy
             </Link>{" "}
@@ -127,8 +130,8 @@ export default function AboutPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Team</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Team</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser is a small independent project maintained by a
             volunteer team of geography and anthropology enthusiasts. We are
             not affiliated with any university, government, or commercial
@@ -139,7 +142,7 @@ export default function AboutPage() {
             should add, please reach out through the{" "}
             <Link
               href="/contact"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Contact
             </Link>{" "}

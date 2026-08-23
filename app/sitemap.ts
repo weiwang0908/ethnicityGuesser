@@ -4,7 +4,8 @@ import countries from "@/data/countries.json";
 
 /**
  * 全站 sitemap（哥飞 TDH：覆盖全部可索引 URL + lastmod）。
- * - 静态页：13 个（首页 / 3 个游戏页 / 2 个索引 / 7 个信任页）
+ * - 静态页：12 个（首页 / 3 个游戏页 / 2 个索引 / 6 个信任页）
+ *   /faq 已删除，FAQ 内容内嵌于首页 #faq 锚点
  * - phenotype 详情：209 个
  * - country 详情：48 个
  *
@@ -29,7 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
     "/disclaimer",
     "/editorial-policy",
-    "/faq",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,

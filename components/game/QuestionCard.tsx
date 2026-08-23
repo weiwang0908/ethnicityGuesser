@@ -22,15 +22,15 @@ export default function QuestionCard({
   const progress = Math.round((questionNumber / totalQuestions) * 100);
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between text-sm text-gray-600">
-        <span className="font-medium text-gray-900">
+    <div className="flex flex-col gap-3 rounded-4xl bg-white border border-stone-200 shadow-premium p-5 sm:p-6">
+      <div className="flex items-center justify-between text-sm text-stone-600">
+        <span className="font-medium text-stone-900">
           Question {questionNumber} / {totalQuestions}
         </span>
         <span>{progress}%</span>
       </div>
       <div
-        className="w-full h-2 bg-gray-200 rounded-full overflow-hidden"
+        className="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
         role="progressbar"
         aria-valuenow={questionNumber}
         aria-valuemin={1}
@@ -38,16 +38,16 @@ export default function QuestionCard({
         aria-label={`Question ${questionNumber} of ${totalQuestions}`}
       >
         <div
-          className="h-full bg-gray-900 rounded-full transition-all"
+          className="h-full bg-amber-500 rounded-full transition-all"
           style={{ width: `${progress}%` }}
         />
       </div>
       <div className="flex justify-center">
         <div
-          className={`relative w-full overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm ${
+          className={`relative w-full overflow-hidden rounded-3xl bg-stone-100 shadow-premium ${
             phenotype.image_url.startsWith("/countries/")
-              ? "max-w-[240px] aspect-[4/3]"
-              : "max-w-sm aspect-square"
+              ? "max-w-[200px] lg:max-w-none aspect-[4/3]"
+              : "max-w-[240px] lg:max-w-none aspect-square"
           }`}
         >
           <Image

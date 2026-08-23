@@ -25,12 +25,15 @@ export default function EditorialPolicyPage() {
         ]}
       />
 
-      <article className="flex flex-col gap-6 max-w-3xl">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+      <article className="flex flex-col gap-6 max-w-3xl rounded-4xl bg-section-soft border border-stone-200/70 p-6 sm:p-8 shadow-premium">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          Editorial Policy
+        </span>
+        <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
           Editorial Policy
         </h1>
 
-        <p className="m-0 text-base text-gray-700 leading-relaxed">
+        <p className="m-0 text-base text-stone-700 leading-relaxed">
           This Editorial Policy explains how Ethnicity Guesser selects
           sources, reviews content, and handles corrections. Because the site
           covers human phenotypes, a topic that sits at the edge of
@@ -41,14 +44,14 @@ export default function EditorialPolicyPage() {
         </p>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Data Sources</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Data Sources</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The phenotype catalogue is compiled from publicly available
             anthropology references and rewritten in plain English. The
             primary source for phenotype descriptions and composite faces is{" "}
             <a
               href="https://humanphenotypes.net"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -59,7 +62,7 @@ export default function EditorialPolicyPage() {
             synthesized from composite face projects hosted on{" "}
             <a
               href="https://en.wikipedia.org"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -68,7 +71,7 @@ export default function EditorialPolicyPage() {
             and related public archives, which themselves aggregate published
             composite-face studies.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             For East Asian population history in particular, we cross-reference
             peer-reviewed genetics research, including work from the Fudan
             University Jin Li group on the demographic history of Han Chinese
@@ -82,10 +85,10 @@ export default function EditorialPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Review Process
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Every phenotype entry goes through a lightweight review process
             before publication. The process has three stages. First, the
             compiler collects the source material and drafts the plain-English
@@ -98,12 +101,12 @@ export default function EditorialPolicyPage() {
             make sure it frames the phenotype as a historical appearance
             pattern, not a modern identity label.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Reader-reported inaccuracies go through the same review process.
             When a reader emails us through the{" "}
             <Link
               href="/contact"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Contact
             </Link>{" "}
@@ -115,10 +118,10 @@ export default function EditorialPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Accuracy Standards
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             We aim for accuracy at the level of a serious educational
             reference, not a peer-reviewed journal. Concretely, that means:
             phenotype names follow the convention used by Human Phenotypes;
@@ -131,7 +134,7 @@ export default function EditorialPolicyPage() {
             sharp, that any individual matches a phenotype, or that the
             historical distributions are still accurate today.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Where sources disagree, we default to the more conservative
             description and note the disagreement in the entry. Where a
             phenotype is poorly documented or politically sensitive, we either
@@ -142,10 +145,10 @@ export default function EditorialPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Updates &amp; Corrections
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Entries are reviewed on a rolling basis and re-published whenever
             a correction is accepted. We do not maintain a public changelog,
             but every corrected entry carries an internal note of what changed
@@ -155,12 +158,12 @@ export default function EditorialPolicyPage() {
             substantially, we also re-check the related game questions to make
             sure the quiz still scores fairly.
           </p>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             If you believe an entry is wrong, please send the page URL, the
             specific text you disagree with, and a source we can verify to{" "}
             <a
               href="mailto:hello@ethnicity-guesser.com"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               hello@ethnicity-guesser.com
             </a>
@@ -170,10 +173,10 @@ export default function EditorialPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Citation Policy
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             You are welcome to quote short excerpts from any Ethnicity Guesser
             page for non-commercial educational purposes, with attribution and
             a link back to the original page. The composite face images and
@@ -190,20 +193,20 @@ export default function EditorialPolicyPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Contact</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Contact</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Questions about this Editorial Policy, including source
             suggestions and correction reports, can be sent to{" "}
             <a
               href="mailto:hello@ethnicity-guesser.com"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               hello@ethnicity-guesser.com
             </a>
             . The full disclaimer that frames every entry is on the{" "}
             <Link
               href="/disclaimer"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Disclaimer
             </Link>{" "}

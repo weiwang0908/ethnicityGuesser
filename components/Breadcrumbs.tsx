@@ -36,25 +36,25 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ol className="hidden sm:flex flex-wrap items-center gap-1 text-sm text-gray-600 m-0 p-0 list-none">
+      <ol className="hidden sm:flex flex-wrap items-center gap-1 text-sm text-stone-500 m-0 p-0 list-none">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
             <li key={item.url} className="flex items-center gap-1 m-0 p-0">
               {isLast ? (
-                <span aria-current="page" className="text-gray-900 font-medium">
+                <span aria-current="page" className="text-stone-900 font-medium">
                   {item.name}
                 </span>
               ) : (
                 <Link
                   href={item.url}
-                  className="hover:underline min-h-[44px] flex items-center"
+                  className="hover:underline min-h-[44px] flex items-center hover:text-amber-800 transition-colors"
                 >
                   {item.name}
                 </Link>
               )}
               {!isLast && (
-                <span aria-hidden className="text-gray-400 mx-1">
+                <span aria-hidden className="text-stone-400 mx-1">
                   &gt;
                 </span>
               )}

@@ -129,15 +129,15 @@ export default function PhenotypeDetailPage({
     return (
       <div className="flex flex-col gap-6">
         <Disclaimer />
-        <h1 className="m-0 text-3xl font-bold text-gray-900">
+        <h1 className="m-0 text-3xl font-bold text-stone-900">
           Phenotype Not Found
         </h1>
-        <p className="m-0 text-base text-gray-700">
+        <p className="m-0 text-base text-stone-700">
           The requested phenotype could not be found.
         </p>
         <Link
           href="/phenotypes"
-          className="text-gray-900 underline underline-offset-4 min-h-[44px] inline-flex items-center"
+          className="text-stone-900 underline underline-offset-4 min-h-[44px] inline-flex items-center"
         >
           ← Back to human phenotypes list
         </Link>
@@ -179,12 +179,17 @@ export default function PhenotypeDetailPage({
         ]}
       />
 
-      <article className="flex flex-col gap-8 max-w-3xl">
+      <article className="flex flex-col gap-8 max-w-3xl rounded-4xl bg-white border border-stone-200 shadow-premium p-6 sm:p-8">
         <header className="flex flex-col gap-3">
-          <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-            {phenotype.name} Phenotype - Face Features & Origin
-          </h1>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <div className="flex flex-col gap-2">
+            <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+              Phenotype
+            </span>
+            <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
+              {phenotype.name} Phenotype - Face Features & Origin
+            </h1>
+          </div>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The {phenotype.name} phenotype is a {phenotype.region.toLowerCase()}{" "}
             human phenotype documented in historical anthropology literature.
             This page presents the {phenotype.name} phenotype average face
@@ -195,10 +200,10 @@ export default function PhenotypeDetailPage({
 
         {/* Average Face */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Average Face
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The {phenotype.name} phenotype average face is a composite
             synthesized from multiple individual photographs by historical
             anthropologists. It represents a statistical impression of recurring
@@ -210,28 +215,28 @@ export default function PhenotypeDetailPage({
             width={300}
             height={300}
             sizes="(max-width: 640px) 100vw, 300px"
-            className="rounded-lg border border-gray-200 object-cover bg-gray-100 w-full max-w-[300px] h-auto"
+            className="rounded-3xl overflow-hidden shadow-premium object-cover bg-stone-100 w-full max-w-[300px] h-auto"
             loading="lazy"
           />
         </section>
 
         {/* Geographic Distribution */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Geographic Distribution
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The {phenotype.name} phenotype is native to {phenotype.region}. The
             historical distribution below reflects approximate centers of
             prevalence documented roughly 1500 years ago; modern borders and
             population movements have since blurred these boundaries.
           </p>
-          <p className="m-0 text-sm text-gray-600">
+          <p className="m-0 text-sm text-stone-600">
             Approximate coordinates: {phenotype.lat.toFixed(2)}°,{" "}
             {phenotype.lng.toFixed(2)}° (latitude, longitude).
           </p>
           <div
-            className="border border-gray-200 rounded-lg p-4 bg-gray-50 text-sm text-gray-700"
+            className="rounded-2xl bg-section-soft border border-stone-200/70 p-5 text-sm text-stone-700"
             aria-label={`Map placeholder for ${phenotype.name} phenotype location`}
           >
             <span aria-hidden className="mr-2">
@@ -244,17 +249,17 @@ export default function PhenotypeDetailPage({
 
         {/* Physical Characteristics */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Physical Characteristics
           </h2>
           {physical ? (
             <>
-              <p className="m-0 text-base text-gray-700 leading-relaxed">
+              <p className="m-0 text-base text-stone-700 leading-relaxed">
                 {physical}
               </p>
             </>
           ) : (
-            <p className="m-0 text-base text-gray-700 leading-relaxed">
+            <p className="m-0 text-base text-stone-700 leading-relaxed">
               Physical trait details for the {phenotype.name} phenotype are not
               clearly segmented in source data; see the historical background
               section below for the full description.
@@ -264,20 +269,20 @@ export default function PhenotypeDetailPage({
 
         {/* Historical Background */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Historical Background
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             {historical || phenotype.description}
           </p>
           {phenotype.source_url && (
-            <p className="m-0 text-sm text-gray-600">
+            <p className="m-0 text-sm text-stone-600">
               Source:{" "}
               <a
                 href={phenotype.source_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-900 underline underline-offset-4 hover:text-gray-700"
+                className="text-stone-900 underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800 transition-colors"
               >
                 Human Phenotypes — {phenotype.name}
               </a>
@@ -287,16 +292,16 @@ export default function PhenotypeDetailPage({
 
         {/* References & Literature */}
         <section className="flex flex-col gap-3">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             References & Literature
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The {phenotype.name} phenotype entry above is compiled from the
             following academic references. Readers are encouraged to consult
             the original sources for verification and deeper context.
           </p>
           {phenotype.references && phenotype.references.length > 0 ? (
-            <ul className="m-0 pl-6 list-disc flex flex-col gap-2 text-sm text-gray-700">
+            <ul className="m-0 pl-6 list-disc flex flex-col gap-2 text-sm text-stone-700">
               {phenotype.references.map((ref, idx) => (
                 <li key={idx} className="leading-relaxed">
                   {ref}
@@ -304,7 +309,7 @@ export default function PhenotypeDetailPage({
               ))}
             </ul>
           ) : (
-            <p className="m-0 text-sm text-gray-600">
+            <p className="m-0 text-sm text-stone-600">
               No academic references recorded for this phenotype.
             </p>
           )}
@@ -312,18 +317,18 @@ export default function PhenotypeDetailPage({
 
         {/* Related Phenotypes */}
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Related Phenotypes
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Other human phenotypes related to {phenotype.name} by geography or
             typological similarity.
           </p>
           <ul className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 gap-3">
             {related.map((r) => (
               <li key={r.slug} className="m-0 p-0">
-                <div className="flex flex-col gap-1 border border-gray-200 rounded-lg p-3 hover:border-gray-400 transition-colors h-full">
-                  <h3 className="m-0 text-base font-semibold text-gray-900 leading-tight">
+                <div className="group flex flex-col gap-1 p-3 h-full rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium">
+                  <h3 className="m-0 text-base font-semibold text-stone-900 leading-tight group-hover:text-amber-800 transition-colors">
                     <Link
                       href={`/phenotype/${r.slug}`}
                       className="hover:underline underline-offset-4 min-h-[44px] flex items-center"
@@ -331,10 +336,10 @@ export default function PhenotypeDetailPage({
                       {r.name}
                     </Link>
                   </h3>
-                  <p className="m-0 text-xs text-gray-600">
+                  <p className="m-0 text-xs text-stone-600">
                     {r.region}
                   </p>
-                  <p className="m-0 text-xs text-gray-600 line-clamp-2">
+                  <p className="m-0 text-xs text-stone-600 line-clamp-2">
                     {r.description.split("Physical Traits:")[0].trim().slice(0, 140)}
                     {r.description.split("Physical Traits:")[0].trim().length > 140
                       ? "..."
@@ -348,11 +353,11 @@ export default function PhenotypeDetailPage({
 
         <nav
           aria-label="Back to phenotypes list"
-          className="border-t border-gray-200 pt-4"
+          className="border-t border-stone-200 pt-4"
         >
           <Link
             href="/phenotypes"
-            className="text-gray-900 underline underline-offset-4 min-h-[44px] inline-flex items-center text-sm"
+            className="text-stone-900 underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800 transition-colors min-h-[44px] inline-flex items-center text-sm"
           >
             ← Back to human phenotypes list
           </Link>

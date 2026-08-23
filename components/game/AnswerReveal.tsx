@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import type { Phenotype } from "@/lib/dailyQuestions";
 
@@ -8,7 +9,7 @@ const WorldMap = dynamic(() => import("@/components/game/WorldMap"), {
   ssr: false,
   loading: () => (
     <div
-      className="w-full rounded-lg bg-gray-100"
+      className="w-full rounded-3xl bg-stone-100"
       style={{ height: 300 }}
       aria-label="Loading map"
     />
@@ -45,14 +46,40 @@ export default function AnswerReveal({
   const roundedDistance = Math.round(distance).toLocaleString("en-US");
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <h2 className="m-0 text-xl sm:text-2xl font-bold text-gray-900">
-          {phenotype.name}
-        </h2>
-        <p className="m-0 text-sm text-gray-600">
-          Region: {phenotype.region}
-        </p>
+    <div className="flex flex-col gap-4 rounded-4xl bg-section-soft border border-stone-200/70 shadow-premium p-6">
+      {/* 人脸缩略图 + 名称并排：让用户答题时看到的脸和答案对照，无需靠记忆回想 */}
+      <div className="flex items-center gap-4">
+        <div
+          className={`relative shrink-0 overflow-hidden rounded-2xl bg-white border border-stone-200 shadow-premium ${
+            phenotype.image_url.startsWith("/countries/")
+              ? "w-24 aspect-[4/3]"
+              : "w-20 sm:w-24 aspect-square"
+          }`}
+        >
+          <Image
+            src={phenotype.image_url}
+            alt={
+              phenotype.image_url.startsWith("/countries/")
+                ? `${phenotype.name} country flag`
+                : `${phenotype.name} phenotype average face`
+            }
+            fill
+            sizes="96px"
+            className={
+              phenotype.image_url.startsWith("/countries/")
+                ? "object-contain p-1.5"
+                : "object-cover"
+            }
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <h2 className="m-0 text-xl sm:text-2xl font-bold text-stone-900">
+            {phenotype.name}
+          </h2>
+          <p className="m-0 text-sm text-stone-600">
+            Region: {phenotype.region}
+          </p>
+        </div>
       </div>
 
       <WorldMap
@@ -74,22 +101,22 @@ export default function AnswerReveal({
       />
 
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
-        <p className="m-0 text-base text-gray-900">
+        <p className="m-0 text-base text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium p-4">
           You were{" "}
           <span className="font-semibold">{roundedDistance} km</span> away
         </p>
-        <p className="m-0 text-base text-gray-900">
+        <p className="m-0 text-base text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium p-4">
           Score:{" "}
           <span className="font-semibold">+{score} points</span>
         </p>
       </div>
 
-      <p className="m-0 text-sm text-gray-700 leading-relaxed">{shortDesc}</p>
+      <p className="m-0 text-sm text-stone-700 leading-relaxed">{shortDesc}</p>
 
       <button
         type="button"
         onClick={onNext}
-        className="inline-flex items-center justify-center min-h-[44px] px-5 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors w-full sm:w-auto"
+        className="inline-flex items-center justify-center min-h-[44px] px-5 py-3 rounded-lg bg-stone-900 text-white font-medium hover:bg-stone-800 transition-colors w-full sm:w-auto"
       >
         {isLast ? "See Final Results" : "Next Question"}
       </button>

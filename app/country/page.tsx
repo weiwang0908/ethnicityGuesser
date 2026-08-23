@@ -53,10 +53,15 @@ export default function CountryIndexPage() {
       />
 
       <article className="flex flex-col gap-6">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-          Country Average Faces - 48 Countries Gallery
-        </h1>
-        <p className="m-0 text-base text-gray-700 leading-relaxed">
+        <div className="flex flex-col gap-2">
+          <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+            Gallery
+          </span>
+          <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
+            Country Average Faces - 48 Countries Gallery
+          </h1>
+        </div>
+        <p className="m-0 text-base text-stone-700 leading-relaxed">
           A gallery of {allCountries.length} country average face composites,
           grouped by region. Each country below links to a dedicated page with
           the composite, a 1500-word introduction to the country&apos;s people,
@@ -72,7 +77,7 @@ export default function CountryIndexPage() {
             <a
               key={region}
               href={`#region-${region.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-              className="text-sm text-gray-700 hover:underline underline-offset-4 min-h-[44px] flex items-center px-2 py-1 rounded hover:bg-gray-100"
+              className="text-sm text-stone-700 hover:underline underline-offset-4 min-h-[44px] flex items-center px-2 py-1 rounded hover:bg-stone-100"
             >
               {region} ({items.length})
             </a>
@@ -89,8 +94,8 @@ export default function CountryIndexPage() {
               id={anchor}
               className="flex flex-col gap-4 scroll-mt-20"
             >
-              <h2 className="m-0 text-2xl font-bold text-gray-900">{region}</h2>
-              <p className="m-0 text-sm text-gray-600">
+              <h2 className="m-0 text-2xl font-bold text-stone-900">{region}</h2>
+              <p className="m-0 text-sm text-stone-600">
                 {items.length} countr{items.length > 1 ? "ies" : "y"} in{" "}
                 {region} with average face composites.
               </p>
@@ -100,7 +105,7 @@ export default function CountryIndexPage() {
                     c.image_url && c.image_url.trim().length > 0;
                   return (
                     <li key={c.slug} className="m-0 p-0">
-                      <div className="flex flex-col gap-2 border border-gray-200 rounded-lg p-3 hover:border-gray-400 transition-colors h-full">
+                      <div className="group flex flex-col gap-2 p-3 h-full rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover transition-all duration-300 ease-premium">
                         <div className="flex items-start gap-3">
                           {hasImage ? (
                             <Image
@@ -109,20 +114,20 @@ export default function CountryIndexPage() {
                               width={80}
                               height={80}
                               sizes="80px"
-                              className="rounded-md object-cover flex-shrink-0 bg-gray-100"
+                              className="rounded-md object-cover flex-shrink-0 bg-stone-100 group-hover:scale-[1.06] transition-transform duration-500 ease-premium"
                               loading="lazy"
                             />
                           ) : (
                             <div
                               role="img"
                               aria-label={`${c.name} average face composite`}
-                              className="rounded-md border border-gray-200 bg-gray-100 w-20 h-20 flex items-center justify-center text-center px-1 text-[10px] text-gray-500 flex-shrink-0"
+                              className="rounded-md border border-stone-200 bg-stone-100 w-20 h-20 flex items-center justify-center text-center px-1 text-[10px] text-stone-500 flex-shrink-0"
                             >
                               {c.name} average face
                             </div>
                           )}
                           <div className="flex flex-col gap-1 min-w-0">
-                            <h3 className="m-0 text-base font-semibold text-gray-900 leading-tight">
+                            <h3 className="m-0 text-base font-semibold text-stone-900 leading-tight group-hover:text-amber-800 transition-colors">
                               <Link
                                 href={`/country/${c.slug}`}
                                 className="hover:underline underline-offset-4 min-h-[44px] flex items-center"
@@ -130,10 +135,10 @@ export default function CountryIndexPage() {
                                 {c.name}
                               </Link>
                             </h3>
-                            <p className="m-0 text-xs text-gray-600">
+                            <p className="m-0 text-xs text-stone-600">
                               {c.region}
                             </p>
-                            <p className="m-0 text-xs text-gray-600 line-clamp-2">
+                            <p className="m-0 text-xs text-stone-600 line-clamp-2">
                               {c.description}
                             </p>
                           </div>
@@ -148,11 +153,11 @@ export default function CountryIndexPage() {
         })}
       </article>
 
-      <section className="flex flex-col gap-3 border-t border-gray-200 pt-6">
-        <h2 className="m-0 text-xl font-bold text-gray-900">
+      <section className="flex flex-col gap-3 border-t border-stone-200 pt-6">
+        <h2 className="m-0 text-xl font-bold text-stone-900">
           Continue Exploring
         </h2>
-        <p className="m-0 text-sm text-gray-700">
+        <p className="m-0 text-sm text-stone-700">
           Read a specific country in detail, browse human phenotypes, or play
           the ethnicity quiz game.
         </p>
@@ -160,7 +165,7 @@ export default function CountryIndexPage() {
           <li className="m-0 p-0">
             <Link
               href="/"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               ← Back to Home
             </Link>
@@ -168,7 +173,7 @@ export default function CountryIndexPage() {
           <li className="m-0 p-0">
             <Link
               href="/phenotypes"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               Browse Human Phenotypes
             </Link>
@@ -176,7 +181,7 @@ export default function CountryIndexPage() {
           <li className="m-0 p-0">
             <Link
               href="/play/countries"
-              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-gray-700 hover:underline border border-gray-300 rounded"
+              className="inline-flex items-center min-h-[44px] px-4 py-2 text-sm text-stone-900 rounded-2xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
             >
               Play Countries Mode
             </Link>

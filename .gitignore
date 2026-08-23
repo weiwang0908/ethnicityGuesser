@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ide / agent skills
+.agents/
+.claude/
+.trae/skills/
+skills-lock.json
+
+# python
+__pycache__/
+*.pyc

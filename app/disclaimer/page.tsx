@@ -25,12 +25,15 @@ export default function DisclaimerPage() {
         ]}
       />
 
-      <article className="flex flex-col gap-6 max-w-3xl">
-        <h1 className="m-0 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+      <article className="flex flex-col gap-6 max-w-3xl rounded-4xl bg-section-soft border border-stone-200/70 p-6 sm:p-8 shadow-premium">
+        <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+          Disclaimer
+        </span>
+        <h1 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
           Disclaimer - Educational Use Only
         </h1>
 
-        <p className="m-0 text-base text-gray-700 leading-relaxed">
+        <p className="m-0 text-base text-stone-700 leading-relaxed">
           Ethnicity Guesser is an educational anthropology project. The
           phenotype encyclopedia, country average faces, and quiz questions on
           this site are provided for educational and entertainment purposes
@@ -41,10 +44,10 @@ export default function DisclaimerPage() {
         </p>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Educational Purpose
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser exists to help curious people build a mental map
             of human phenotypic variation across geography. The game is a hook
             for reading; the encyclopedia is the point. Everything on the site
@@ -56,10 +59,10 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Not DNA Ancestry
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The phenotype descriptions on this site estimate appearance, not
             DNA ancestry or personal identity. A phenotype is a recurring set
             of visible physical traits, not a genetic haplogroup and not a
@@ -73,10 +76,10 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             Historical Context
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The phenotype distributions shown on this site are based on
             historical distributions from roughly 1500 years ago, not on
             modern national borders or modern census categories. Populations
@@ -89,10 +92,10 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             No Personal Identification
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             Ethnicity Guesser is not suitable for determining individual
             racial or ethnic identity. Composite faces and phenotype
             descriptions describe broad patterns across populations, not any
@@ -104,7 +107,7 @@ export default function DisclaimerPage() {
             report it through the{" "}
             <Link
               href="/contact"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Contact
             </Link>{" "}
@@ -113,10 +116,10 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">
             External Links
           </h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             The site links out to public reference sources such as Human
             Phenotypes, Wikimedia Commons, and academic publications so you
             can verify the underlying data. We do not control the content of
@@ -129,14 +132,14 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="m-0 text-2xl font-bold text-gray-900">Contact</h2>
-          <p className="m-0 text-base text-gray-700 leading-relaxed">
+          <h2 className="m-0 text-2xl font-bold text-stone-900">Contact</h2>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
             If you have a question about this disclaimer or want to report
             content that reads as stereotyping rather than education, email
             us at{" "}
             <a
               href="mailto:hello@ethnicity-guesser.com"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               hello@ethnicity-guesser.com
             </a>
@@ -144,7 +147,7 @@ export default function DisclaimerPage() {
             through the review process described on the{" "}
             <Link
               href="/editorial-policy"
-              className="text-gray-900 font-medium underline underline-offset-4 hover:text-gray-700"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
             >
               Editorial Policy
             </Link>{" "}
