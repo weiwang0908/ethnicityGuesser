@@ -5,14 +5,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata = buildMetadata({
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Ethnicity Guesser. We use cookie-free Plausible Analytics, store no personal data, and never store uploaded photos. GDPR and CCPA compliant by design.",
+    "Privacy Policy for Ethnicity Guesser. Cookie-free Plausible Analytics plus Google Analytics 4, no personal data stored, never store uploaded photos. Learn what we collect and how to opt out.",
   path: "/privacy-policy",
 });
 
 /**
  * /privacy-policy 信任页（服务端组件 + SSG）。
  * 哥飞方法论：单一 H1，H2 罗列章节，正文写在 <p>，无 keywords meta。
- * 重点：Plausible（无 cookie）、不存储用户上传照片、GDPR/CCPA 合规意向。
+ * 重点：Plausible（无 cookie）+ GA4（有一方 cookie，已披露）、
+ * 不存储用户上传照片、GDPR/CCPA 合规意向。
  */
 export default function PrivacyPolicyPage() {
   return (
@@ -87,11 +88,37 @@ export default function PrivacyPolicyPage() {
             no fingerprint, and no cross-site tracking.
           </p>
           <p className="m-0 text-base text-stone-700 leading-relaxed">
-            Because Plausible is cookie-free, this site does not set any
-            tracking cookies and does not require a cookie banner under the
-            EU ePrivacy Directive. If you still prefer to opt out of all
-            analytics, you can use a content blocker or do-not-track setting
-            in your browser; Plausible respects Do Not Track signals.
+            Because Plausible is cookie-free, it does not require a cookie
+            banner under the EU ePrivacy Directive.
+          </p>
+          <p className="m-0 text-base text-stone-700 leading-relaxed">
+            This site also uses{" "}
+            <a
+              href="https://marketingplatform.google.com/about/analytics/"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Google Analytics 4
+            </a>{" "}
+            to understand how visitors find and use the game — for example,
+            which game mode they start, where they drop off, and which
+            pages bring in traffic from search. Google Analytics sets
+            first-party cookies (including a client ID cookie) to
+            distinguish visitors and measure sessions. It does not collect
+            names, email addresses, or anything you type into the site, and
+            we do not enable Google advertising or cross-site tracking
+            features. You can opt out with a content blocker, by disabling
+            cookies for this site, or with the{" "}
+            <a
+              href="https://tools.google.com/dlpage/gaoptout"
+              className="text-stone-900 font-medium underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              official Google Analytics opt-out browser add-on
+            </a>
+            .
           </p>
         </section>
 
@@ -126,10 +153,12 @@ export default function PrivacyPolicyPage() {
             Because we do not store personal data, there is essentially nothing
             to retain. Aggregate analytics counters in Plausible are retained
             by Plausible according to its own data-retention policy, which you
-            can read on the Plausible website. Any game progress stored in
-            your browser through localStorage persists only until you clear
-            your browser data for this site, at which point it is permanently
-            deleted.
+            can read on the Plausible website. Google Analytics data is
+            retained according to Google&apos;s standard retention settings,
+            which you can review in Google&apos;s privacy policy. Any game
+            progress stored in your browser through localStorage persists only
+            until you clear your browser data for this site, at which point it
+            is permanently deleted.
           </p>
           <p className="m-0 text-base text-stone-700 leading-relaxed">
             We do not store uploaded photos. Although the planned AI face

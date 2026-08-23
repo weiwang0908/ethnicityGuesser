@@ -87,7 +87,7 @@ const faqItems: { question: string; answer: string }[] = [
   {
     question: "Is my data stored when I play?",
     answer:
-      "Only your daily streak and local game progress, and only in your own browser through localStorage. Nothing leaves your device, there is no account, and clearing your browser data erases it completely. The site uses cookie-free Plausible Analytics for aggregate traffic counts only. See the Privacy Policy page for the full details.",
+      "Only your daily streak and local game progress, and only in your own browser through localStorage. Nothing leaves your device, there is no account, and clearing your browser data erases it completely. For traffic measurement the site uses cookie-free Plausible Analytics plus Google Analytics 4, which sets first-party measurement cookies. See the Privacy Policy page for the full details and opt-out options.",
   },
   {
     question: "Can I use my own photos?",

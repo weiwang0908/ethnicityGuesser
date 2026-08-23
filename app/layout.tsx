@@ -18,6 +18,13 @@ const geistMono = localFont({
 });
 
 /**
+ * Google Analytics 4（gtag.js）。
+ * 与 Plausible 并行：GA 看转化漏斗与站内行为，Plausible 看轻量 PV/UV。
+ * 注意：GA4 使用 cookie，隐私政策已同步披露。
+ */
+const GA_MEASUREMENT_ID = "G-S7P1T6WSZJ";
+
+/**
  * 站点级默认 metadata（哥飞 TDH 方法论）。
  * - 不生成 <meta name="keywords">
  * - metadataBase 让相对 OG 图地址可解析
@@ -72,6 +79,19 @@ export default function RootLayout({
           data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
           strategy="afterInteractive"
         />
+        {/* Google Analytics 4（gtag.js） */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
