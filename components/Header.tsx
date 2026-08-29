@@ -12,6 +12,7 @@ const playLinks = [
 const topLinks = [
   { name: "Phenotypes", href: "/phenotypes" },
   { name: "Countries", href: "/country" },
+  { name: "Blog", href: "/blog" },
   { name: "FAQ", href: "/#faq" },
 ];
 

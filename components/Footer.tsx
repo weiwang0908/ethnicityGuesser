@@ -10,6 +10,7 @@ const gameLinks = [
 const resourceLinks = [
   { name: "Phenotypes", href: "/phenotypes" },
   { name: "Countries", href: "/country" },
+  { name: "Blog", href: "/blog" },
   { name: "FAQ", href: "/#faq" },
 ];
 

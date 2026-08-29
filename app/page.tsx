@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
+import { allBlogPosts, CATEGORY_LABELS } from "@/lib/blogContent";
 import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata = buildMetadata({
@@ -146,6 +147,9 @@ const faqPageJsonLd = {
 };
 
 export default function Home() {
+  // 最新 3 篇博客（首页展示位，spec：Latest from the blog）
+  const latestPosts = allBlogPosts.slice(0, 3);
+
   return (
     <div className="flex flex-col gap-24 sm:gap-32">
       {/* Hero — warm radial glow on off-white */}
@@ -462,6 +466,56 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest from the blog */}
+      {latestPosts.length > 0 && (
+        <section className="flex flex-col gap-8">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
+                Blog
+              </span>
+              <h2 className="m-0 text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
+                Latest from the blog
+              </h2>
+              <p className="m-0 text-base text-stone-500 max-w-xl">
+                Essays on the science behind the game — the genetics of
+                light eyes, what a phenotype really is, and how to read
+                human diversity honestly.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-stone-900 underline underline-offset-4 decoration-stone-300 hover:decoration-amber-500 hover:text-amber-800 transition-colors shrink-0"
+            >
+              All articles
+            </Link>
+          </div>
+          <ul className="m-0 p-0 list-none grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            {latestPosts.map((post) => (
+              <li key={post.slug} className="m-0 p-0">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group flex flex-col gap-3 h-full p-5 rounded-3xl bg-white border border-stone-200 shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-300 ease-premium"
+                >
+                  <div className="flex items-center gap-3 text-xs text-stone-500">
+                    <span className="px-2 py-0.5 rounded-full bg-section-soft border border-stone-200/70 font-medium text-stone-700">
+                      {CATEGORY_LABELS[post.category] || post.category}
+                    </span>
+                    <span>{post.readingMinutes} min read</span>
+                  </div>
+                  <h3 className="m-0 text-xl font-semibold text-stone-900 leading-snug group-hover:text-amber-800 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="m-0 text-sm text-stone-600 leading-relaxed line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* FAQ — full 12 items inlined on homepage for keyword density */}
       <section id="faq" className="flex flex-col gap-8 scroll-mt-24">
