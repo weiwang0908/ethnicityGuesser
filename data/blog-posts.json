@@ -20,5 +20,27 @@
     "image_url": "/phenotypes/huanghoid.jpg",
     "image_alt": "Huanghoid phenotype average face composite from East Asia",
     "relatedPhenotypes": ["huanghoid"]
+  },
+  {
+    "slug": "the-evolutionary-story-behind-andean-faces",
+    "title": "The Evolutionary Story Behind Andean Faces",
+    "excerpt": "From round, heat-conserving faces above 3,500 meters to mixed-mestizo lowland populations, the skulls of the Andes are a lesson in adaptation pushed to its current edge.",
+    "date": "2026-08-30",
+    "category": "genetics",
+    "readingMinutes": 8,
+    "image_url": "/phenotypes/north-andid.jpg",
+    "image_alt": "North Andid phenotype average face composite from the South American Andes",
+    "relatedPhenotypes": ["north-andid", "central-andid", "south-andid"]
+  },
+  {
+    "slug": "how-average-face-composites-are-made",
+    "title": "How Average Face Composites Are Made",
+    "excerpt": "An average face is not a real face. It is a statistical average of hundreds of aligned photographs - and that is exactly why it is so good at describing population patterns.",
+    "date": "2026-08-30",
+    "category": "phenotypes",
+    "readingMinutes": 7,
+    "image_url": "/phenotypes/hallstatt.jpg",
+    "image_alt": "A composite human face built from an aligned set of phenotype photographs",
+    "relatedPhenotypes": ["hallstatt", "aisto-nordid"]
   }
 ]
